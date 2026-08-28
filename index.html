@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prime Nanny. Nanny & Housekeeper Placement in Gauteng</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:      #E8197D;
+      --pink-dark: #C4156A;
+      --pink-pale: #FEF0F7;
+      --pink-soft: #FADADF;
+      --ink:       #1A1A1A;
+      --ink2:      #2E2E2E;
+      --body:      #4A4A4A;
+      --muted:     #888;
+      --rule:      #EBEBEB;
+      --cream:     #FAF8F6;
+      --white:     #FFFFFF;
+      --green:     #1A7A52;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'DM Serif Display', serif;
+      line-height: 1.15;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ─── TOP BAR ─── */
+    .topbar {
+      background: var(--ink);
+      color: rgba(255,255,255,0.7);
+      font-size: 12.5px;
+      padding: 9px 0;
+      letter-spacing: .01em;
+    }
+    .topbar .inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; }
+    .topbar a { color: white; }
+    .topbar-right a { color: white; }
+    .topbar-right { display: flex; gap: 24px; }
+    .topbar-right span { display: flex; align-items: center; gap: 7px; }
+
+    /* ─── NAV ─── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--rule);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 0;
+    }
+    .logo { display: flex; align-items: center; gap: 11px; }
+    .logo-circle {
+      width: 42px; height: 42px;
+      border: 2px solid var(--ink);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--white);
+    }
+    .logo-circle svg { width: 26px; height: 26px; }
+    .logo-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      color: var(--ink);
+      letter-spacing: -.3px;
+    }
+    .logo-name span { color: var(--pink); }
+
+    .nav-links { display: flex; gap: 30px; list-style: none; font-size: 14px; font-weight: 500; }
+    .nav-links a { color: var(--body); transition: color .15s; }
+    .nav-links a:hover { color: var(--pink); }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 10px 22px; border-radius: 6px;
+      font-size: 14px; font-weight: 600;
+      cursor: pointer; border: none;
+      transition: all .18s;
+      font-family: 'DM Sans', sans-serif;
+      letter-spacing: .01em;
+    }
+    .btn-pink { background: var(--pink); color: white; }
+    .btn-pink:hover { background: var(--pink-dark); box-shadow: 0 4px 16px rgba(232,25,125,.3); transform: translateY(-1px); }
+    .btn-ink { background: var(--ink); color: white; }
+    .btn-ink:hover { background: var(--ink2); transform: translateY(-1px); }
+    .btn-ghost { background: transparent; border: 1.5px solid var(--ink); color: var(--ink); }
+    .btn-ghost:hover { background: var(--ink); color: white; }
+    .btn-ghost-white { background: transparent; border: 1.5px solid rgba(255,255,255,.6); color: white; }
+    .btn-ghost-white:hover { background: white; color: var(--pink); }
+    .btn-lg { padding: 14px 30px; font-size: 15px; }
+
+    .hamburger { display: none; font-size: 22px; color: var(--ink); cursor: pointer; }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding: 80px 0 0;
+      background: var(--white);
+      overflow: hidden;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      gap: 64px;
+      align-items: start;
+    }
+    .hero-left { padding-bottom: 72px; }
+    .hero-kicker {
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 2px; color: var(--pink);
+      margin-bottom: 22px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .hero-kicker::before {
+      content: ''; display: block;
+      width: 28px; height: 2px;
+      background: var(--pink); border-radius: 2px;
+    }
+    .hero h1 {
+      font-size: 52px;
+      color: var(--ink);
+      margin-bottom: 22px;
+      max-width: 520px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--pink);
+    }
+    .hero-lead {
+      font-size: 17px;
+      color: var(--body);
+      max-width: 440px;
+      margin-bottom: 36px;
+      line-height: 1.75;
+    }
+    .hero-actions { display: flex; gap: 12px; margin-bottom: 44px; flex-wrap: wrap; }
+    .hero-chips {
+      display: flex; gap: 10px; flex-wrap: wrap;
+    }
+    .hero-chip {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 13px; color: var(--body);
+      border: 1px solid var(--rule);
+      border-radius: 50px;
+      padding: 6px 14px;
+      background: var(--white);
+    }
+    .hero-chip i { color: var(--pink); font-size: 12px; }
+
+    /* Right side, image block + quick form */
+    .hero-right {
+      position: relative;
+      align-self: stretch;
+    }
+    .hero-img-block {
+      background: linear-gradient(145deg, var(--pink-pale) 0%, var(--pink-soft) 100%);
+      border-radius: 16px 16px 0 0;
+      height: 260px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .hero-img-block .img-placeholder-text {
+      font-family: 'DM Serif Display', serif;
+      font-size: 15px; color: var(--pink);
+      opacity: .55; text-align: center; line-height: 1.6;
+    }
+    .hero-img-decoration {
+      position: absolute;
+      bottom: 16px; right: 20px;
+      background: white;
+      border-radius: 50px;
+      padding: 8px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--green);
+      display: flex; align-items: center; gap: 7px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.08);
+    }
+    .hero-img-decoration .dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 1.8s infinite; }
+    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:.4; } }
+
+    .hero-form {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-top: none;
+      border-radius: 0 0 16px 16px;
+      padding: 28px 28px 28px;
+    }
+    .hero-form h4 {
+      font-size: 16px; font-weight: 700;
+      color: var(--ink); margin-bottom: 4px;
+    }
+    .hero-form .form-sub { font-size: 13px; color: var(--muted); margin-bottom: 18px; }
+
+    /* ─── FORM ELEMENTS ─── */
+    .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    .f-group { display: flex; flex-direction: column; gap: 4px; }
+    .f-group label { font-size: 11px; font-weight: 700; letter-spacing: .7px; text-transform: uppercase; color: var(--muted); }
+    .f-group input,
+    .f-group select,
+    .f-group textarea {
+      padding: 10px 13px;
+      border: 1.5px solid var(--rule);
+      border-radius: 7px;
+      font-size: 14px; font-family: 'DM Sans', sans-serif;
+      color: var(--ink); background: var(--cream);
+      transition: border-color .15s;
+    }
+    .f-group input:focus,
+    .f-group select:focus,
+    .f-group textarea:focus { outline: none; border-color: var(--pink); background: white; }
+    .f-group textarea { resize: vertical; min-height: 80px; }
+    .f-full { grid-column: 1 / -1; }
+    .f-note { font-size: 11.5px; color: var(--muted); margin: 8px 0 14px; display: flex; align-items: flex-start; gap: 7px; }
+    .f-note i { color: var(--pink); flex-shrink: 0; margin-top: 2px; }
+    .ok-msg {
+      display: none; font-size: 13px; font-weight: 600;
+      color: var(--green); background: #e8f5ef;
+      border: 1px solid #a3d9bf;
+      border-radius: 7px; padding: 11px 14px;
+      align-items: center; gap: 9px; margin-top: 10px;
+    }
+    .ok-msg.show { display: flex; }
+
+    /* ─── PROOF BAR ─── */
+    .proof-bar {
+      background: var(--ink); color: white;
+      padding: 20px 0;
+    }
+    .proof-row {
+      display: flex; align-items: center; justify-content: center;
+      gap: 0; flex-wrap: wrap;
+    }
+    .proof-item {
+      display: flex; align-items: center; gap: 9px;
+      padding: 8px 28px;
+      border-right: 1px solid rgba(255,255,255,.12);
+      font-size: 14px; font-weight: 500;
+    }
+    .proof-item:last-child { border-right: none; }
+    .proof-item i { color: var(--pink); font-size: 15px; }
+
+    /* ─── INTRO STRIP ─── */
+    .intro {
+      padding: 72px 0;
+      background: var(--cream);
+    }
+    .intro-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 72px; align-items: center;
+    }
+    .intro h2 { font-size: 38px; margin-bottom: 18px; }
+    .intro h2 em { font-style: italic; color: var(--pink); }
+    .intro p { font-size: 15px; color: var(--body); line-height: 1.8; margin-bottom: 14px; }
+    .intro p:last-of-type { margin-bottom: 28px; }
+    .intro-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+      background: var(--rule); border: 1px solid var(--rule);
+      border-radius: 12px; overflow: hidden;
+    }
+    .intro-stat {
+      background: white; padding: 24px;
+      text-align: center;
+    }
+    .intro-stat .num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 36px; color: var(--pink);
+      display: block; margin-bottom: 4px;
+    }
+    .intro-stat .lbl { font-size: 13px; color: var(--body); line-height: 1.4; }
+
+    /* ─── HOW IT WORKS ─── */
+    .how { padding: 80px 0; }
+    .section-label {
+      font-size: 11.5px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 2px;
+      color: var(--pink); margin-bottom: 10px;
+    }
+    .section-h { font-size: 36px; color: var(--ink); margin-bottom: 12px; }
+    .section-p { font-size: 15px; color: var(--body); max-width: 520px; line-height: 1.75; margin-bottom: 52px; }
+    .tc .section-p { margin-left: auto; margin-right: auto; }
+    .tc { text-align: center; }
+
+    .steps-list { list-style: none; display: flex; flex-direction: column; gap: 0; max-width: 720px; margin: 0 auto; }
+    .step-row {
+      display: grid; grid-template-columns: 52px 1fr;
+      gap: 24px; align-items: flex-start;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .step-row:last-child { border-bottom: none; }
+    .step-n {
+      width: 40px; height: 40px;
+      background: var(--pink); color: white;
+      border-radius: 50%; font-size: 16px;
+      font-family: 'DM Serif Display', serif;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 3px;
+    }
+    .step-content h4 { font-size: 17px; font-weight: 700; margin-bottom: 5px; color: var(--ink); }
+    .step-content p { font-size: 14px; color: var(--body); line-height: 1.7; }
+
+    /* ─── SERVICES ─── */
+    .services { padding: 80px 0; background: var(--cream); }
+    .svc-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1px; background: var(--rule);
+      border: 1px solid var(--rule); border-radius: 14px;
+      overflow: hidden;
+    }
+    .svc-cell {
+      background: white; padding: 32px 28px;
+      transition: background .2s;
+    }
+    .svc-cell:hover { background: var(--pink-pale); }
+    .svc-cell h3 {
+      font-size: 18px; font-family: 'DM Serif Display', serif;
+      color: var(--ink); margin-bottom: 8px;
+    }
+    .svc-cell p { font-size: 14px; color: var(--body); line-height: 1.7; margin-bottom: 14px; }
+    .svc-fee {
+      font-size: 13px; font-weight: 600;
+      color: var(--pink);
+    }
+    .svc-wide { grid-column: 1 / -1; border-top: 1px solid var(--rule); background: var(--cream); }
+
+    /* ─── WHY US ─── */
+    .why { padding: 80px 0; }
+    .why-inner { display: grid; grid-template-columns: 5fr 4fr; gap: 72px; align-items: start; }
+    .why-points { margin-top: 36px; display: flex; flex-direction: column; gap: 28px; }
+    .why-point { display: grid; grid-template-columns: 32px 1fr; gap: 16px; align-items: flex-start; }
+    .why-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px; color: var(--pink);
+      line-height: 1; padding-top: 3px;
+    }
+    .why-point h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .why-point p { font-size: 14px; color: var(--body); line-height: 1.7; }
+
+    .verify-block {
+      background: var(--ink); color: white;
+      border-radius: 16px; padding: 32px;
+      position: sticky; top: 100px;
+    }
+    .verify-block h3 {
+      font-size: 19px; font-family: 'DM Serif Display', serif;
+      margin-bottom: 6px;
+    }
+    .verify-block .vb-sub { font-size: 13px; color: rgba(255,255,255,.55); margin-bottom: 24px; }
+    .v-list { display: flex; flex-direction: column; gap: 10px; list-style: none; }
+    .v-item {
+      display: flex; align-items: center; gap: 12px;
+      background: rgba(255,255,255,.05);
+      border-radius: 8px; padding: 13px 15px;
+      font-size: 14px; color: rgba(255,255,255,.85);
+    }
+    .v-dot {
+      width: 26px; height: 26px; flex-shrink: 0;
+      background: var(--pink); border-radius: 50%;
+      font-size: 11px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .v-note {
+      margin-top: 16px; padding: 13px 15px;
+      background: rgba(232,25,125,.12);
+      border-left: 3px solid var(--pink);
+      border-radius: 0 8px 8px 0;
+      font-size: 13px; color: rgba(255,255,255,.7);
+      line-height: 1.6;
+    }
+
+    /* ─── GUARANTEE ─── */
+    .guarantee {
+      background: var(--pink); padding: 52px 0;
+    }
+    .guarantee-inner {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 28px; flex-wrap: wrap;
+    }
+    .gua-text { max-width: 580px; }
+    .gua-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,.65); margin-bottom: 8px; }
+    .gua-text h2 { font-size: 28px; color: white; margin-bottom: 8px; }
+    .gua-text p { font-size: 15px; color: rgba(255,255,255,.85); line-height: 1.7; }
+
+    /* ─── TESTIMONIALS ─── */
+    .testiSection { padding: 80px 0; background: var(--cream); }
+    .testi-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 52px; }
+    .testi-featured {
+      background: var(--ink); color: white;
+      border-radius: 14px; padding: 36px 32px;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .testi-featured .stars { color: var(--pink); font-size: 14px; letter-spacing: 3px; margin-bottom: 18px; }
+    .testi-featured blockquote {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px; line-height: 1.55;
+      color: white; margin-bottom: 28px;
+      font-style: italic;
+    }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .av {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--pink); color: white;
+      font-size: 15px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .testi-author strong { font-size: 14px; font-weight: 700; display: block; }
+    .testi-author span { font-size: 12px; color: rgba(255,255,255,.5); }
+
+    .testi-stack { display: flex; flex-direction: column; gap: 18px; }
+    .testi-small {
+      background: white; border: 1px solid var(--rule);
+      border-radius: 12px; padding: 24px 22px;
+    }
+    .testi-small .stars { color: var(--pink); font-size: 12px; letter-spacing: 2px; margin-bottom: 10px; }
+    .testi-small p { font-size: 14px; color: var(--body); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+    .testi-small .testi-author strong { font-size: 13px; color: var(--ink); }
+    .testi-small .testi-author span { font-size: 12px; color: var(--muted); }
+    .testi-small .av { background: var(--pink-pale); color: var(--pink); }
+
+    /* ─── AREAS ─── */
+    .areas { padding: 64px 0; }
+    .areas-wrap {
+      margin-top: 36px;
+      display: flex; flex-wrap: wrap; gap: 10px;
+    }
+    .area-tag {
+      display: flex; align-items: center; gap: 6px;
+      border: 1.5px solid var(--rule);
+      border-radius: 6px; padding: 8px 16px;
+      font-size: 14px; font-weight: 500; color: var(--ink);
+      background: white; transition: all .15s;
+    }
+    .area-tag i { color: var(--pink); font-size: 11px; }
+    .area-tag:hover { border-color: var(--pink); color: var(--pink); }
+
+    /* ─── FORMS ─── */
+    .forms-section { padding: 80px 0; background: var(--white); }
+    .forms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 52px; }
+    .form-box {
+      border: 1.5px solid var(--rule); border-radius: 14px;
+      padding: 36px 32px; background: white;
+    }
+    .form-box.alt { background: var(--ink); border-color: var(--ink); }
+    .form-box-head { margin-bottom: 22px; }
+    .form-box-label {
+      font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1.8px;
+      margin-bottom: 6px;
+    }
+    .form-box-label.pink { color: var(--pink); }
+    .form-box-label.soft { color: rgba(255,255,255,.45); }
+    .form-box h3 { font-size: 22px; margin-bottom: 6px; }
+    .form-box.alt h3 { color: white; }
+    .form-box-desc { font-size: 13.5px; color: var(--body); line-height: 1.65; }
+    .form-box.alt .form-box-desc { color: rgba(255,255,255,.6); }
+    .form-box.alt .f-group label { color: rgba(255,255,255,.45); }
+    .form-box.alt .f-group input,
+    .form-box.alt .f-group select,
+    .form-box.alt .f-group textarea {
+      background: rgba(255,255,255,.07);
+      border-color: rgba(255,255,255,.15);
+      color: white;
+    }
+    .form-box.alt .f-group input::placeholder,
+    .form-box.alt .f-group textarea::placeholder { color: rgba(255,255,255,.3); }
+    .form-box.alt .f-group input:focus,
+    .form-box.alt .f-group select:focus,
+    .form-box.alt .f-group textarea:focus { border-color: var(--pink); background: rgba(255,255,255,.1); }
+    .form-box.alt .f-note { color: rgba(255,255,255,.4); }
+    .form-box.alt .f-note i { color: rgba(232,25,125,.8); }
+    .form-box.alt select option { background: var(--ink); color: white; }
+
+    /* ─── FAQ ─── */
+    .faq { padding: 80px 0; background: var(--cream); }
+    .faq-inner { display: grid; grid-template-columns: 280px 1fr; gap: 72px; }
+    .faq-lead h2 { font-size: 34px; margin-bottom: 14px; }
+    .faq-lead p { font-size: 14px; color: var(--body); line-height: 1.75; margin-bottom: 22px; }
+    .faq-contact { font-size: 13.5px; color: var(--body); }
+    .faq-contact a { color: var(--pink); font-weight: 600; }
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+    .faq-item { border-bottom: 1px solid var(--rule); }
+    .faq-item:first-child { border-top: 1px solid var(--rule); }
+    .faq-q {
+      padding: 20px 0; display: flex;
+      justify-content: space-between; align-items: center;
+      gap: 16px; cursor: pointer;
+      font-size: 15px; font-weight: 600; color: var(--ink);
+    }
+    .faq-toggle {
+      width: 26px; height: 26px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--pink); font-size: 13px;
+      transition: transform .2s;
+    }
+    .faq-item.open .faq-toggle { transform: rotate(45deg); }
+    .faq-a { display: none; padding-bottom: 18px; font-size: 14px; color: var(--body); line-height: 1.75; }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ─── FINAL CTA ─── */
+    .cta-section {
+      padding: 96px 0;
+      background: var(--ink);
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute; top: -120px; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 700px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,25,125,.08) 0%, transparent 70%);
+    }
+    .cta-section > .container { position: relative; z-index: 1; }
+    .cta-kicker { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--pink); margin-bottom: 14px; }
+    .cta-section h2 { font-size: 44px; color: white; margin-bottom: 16px; max-width: 540px; margin-left: auto; margin-right: auto; }
+    .cta-section h2 em { font-style: italic; color: var(--pink); }
+    .cta-section p { font-size: 16px; color: rgba(255,255,255,.6); margin-bottom: 36px; max-width: 420px; margin-left: auto; margin-right: auto; line-height: 1.75; }
+    .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ─── FOOTER ─── */
+    footer { background: #0F0F0F; color: rgba(255,255,255,.6); padding: 60px 0 28px; }
+    .footer-top {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 44px; padding-bottom: 44px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .ft-brand { }
+    .ft-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px; color: white; margin-bottom: 12px;
+    }
+    .ft-logo span { color: var(--pink); }
+    .ft-brand p { font-size: 13px; line-height: 1.75; color: rgba(255,255,255,.5); margin-bottom: 20px; }
+    .ft-socials { display: flex; gap: 10px; }
+    .ft-soc {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: rgba(255,255,255,.07);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.55); font-size: 14px;
+      transition: all .15s;
+    }
+    .ft-soc:hover { background: var(--pink); color: white; }
+    .ft-col h5 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: rgba(255,255,255,.3); margin-bottom: 16px; }
+    .ft-links { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .ft-links a { font-size: 13px; color: rgba(255,255,255,.55); transition: color .15s; }
+    .ft-links a:hover { color: var(--pink); }
+    .ft-contact-row { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: rgba(255,255,255,.55); margin-bottom: 10px; }
+    .ft-contact-row i { color: var(--pink); font-size: 13px; margin-top: 2px; flex-shrink: 0; }
+    .footer-bottom {
+      padding-top: 22px;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 10px;
+      font-size: 12px; color: rgba(255,255,255,.3);
+    }
+    .popia-pill {
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(26,122,82,.15);
+      border: 1px solid rgba(26,122,82,.3);
+      color: #5ecba1;
+      padding: 4px 12px; border-radius: 50px;
+      font-size: 11px; font-weight: 600;
+    }
+
+    /* ─── WHATSAPP FLOAT ─── */
+    .wa-btn {
+      position: fixed; bottom: 24px; right: 24px;
+      width: 52px; height: 52px;
+      background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 25px;
+      box-shadow: 0 4px 18px rgba(37,211,102,.45);
+      z-index: 999; transition: transform .15s;
+    }
+    .wa-btn:hover { transform: scale(1.07); }
+
+    .scroll-top {
+      position: fixed; bottom: 24px; left: 24px;
+      width: 38px; height: 38px;
+      background: var(--pink); color: white;
+      border-radius: 50%; font-size: 13px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; opacity: 0; transition: opacity .3s; z-index: 997;
+    }
+    .scroll-top.show { opacity: 1; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero { padding: 56px 0 0; }
+      .hero-left { padding-bottom: 40px; }
+      .hero h1 { font-size: 38px; }
+      .hero-right { max-width: 540px; }
+      .intro-inner { grid-template-columns: 1fr; gap: 44px; }
+      .why-inner { grid-template-columns: 1fr; }
+      .verify-block { position: static; }
+      .testi-layout { grid-template-columns: 1fr; }
+      .forms-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .faq-inner { grid-template-columns: 1fr; }
+      .proof-item { padding: 8px 18px; }
+    }
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 30px; }
+      .section-h { font-size: 28px; }
+      .f-row { grid-template-columns: 1fr; }
+      .svc-grid { grid-template-columns: 1fr; }
+      .areas-wrap { gap: 8px; }
+      .footer-top { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .proof-row { flex-direction: column; align-items: flex-start; padding: 0 20px; }
+      .proof-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.1); width: 100%; padding: 10px 0; }
+      .proof-item:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="container inner">
+    <span><i class="fa-solid fa-map-pin" style="color:var(--pink);margin-right:6px;"></i> Serving Gauteng. Johannesburg, Pretoria &amp; surrounds</span>
+    <div class="topbar-right">
+      <span><i class="fa-brands fa-whatsapp" style="color:#25D366;"></i> <a href="https://wa.me/27660023164">066 002 3164</a></span>
+      <span><i class="fa-regular fa-envelope"></i> <a href="mailto:primenanny@gmail.com">primenanny@gmail.com</a></span>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <img src="prime-nanny-logo.png" alt="Prime Nanny" style="height:54px;width:auto;" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#contact">Get Started</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-pink">Find a Nanny</a>
+      <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+
+      <div class="hero-left">
+        <div class="hero-kicker">Nanny &amp; Housekeeper Placement · Gauteng</div>
+        <h1>Your home deserves<br>someone you can <em>trust.</em></h1>
+        <p class="hero-lead">Every candidate checked, interviewed, and referenced, before you ever meet them.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-pink btn-lg">Find a Nanny or Housekeeper</a>
+        </div>
+        <div class="hero-chips">
+          <span class="hero-chip"><i class="fa-solid fa-shield-halved"></i> SAPS criminal check</span>
+          <span class="hero-chip"><i class="fa-solid fa-id-card"></i> ID &amp; passport verified</span>
+          <span class="hero-chip"><i class="fa-solid fa-rotate-left"></i> 30-day guarantee</span>
+          <span class="hero-chip"><i class="fa-solid fa-graduation-cap"></i> Qualification verification</span>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-form">
+          <h4>Enquire Now</h4>
+          <p class="form-sub">We'll WhatsApp you within a few hours.</p>
+          <div class="f-row">
+            <div class="f-group">
+              <label>Your Name</label>
+              <input type="text" placeholder="Jane Smith" />
+            </div>
+            <div class="f-group">
+              <label>WhatsApp Number</label>
+              <input type="tel" placeholder="082 000 0000" />
+            </div>
+          </div>
+          <div class="f-row">
+            <div class="f-group">
+              <label>What do you need?</label>
+              <select>
+                <option value="">Select…</option>
+                <option>Full-time Nanny</option>
+                <option>Au Pair</option>
+                <option>Housekeeper</option>
+                <option>Nanny-Housekeeper</option>
+                <option>Home Care Worker</option>
+                <option>Holiday / Short-term Cover</option>
+              </select>
+            </div>
+            <div class="f-group">
+              <label>Your Area</label>
+              <input type="text" placeholder="e.g. Sandton" />
+            </div>
+          </div>
+          <button class="btn btn-pink" style="width:100%;justify-content:center;padding:12px;font-size:14px;margin-top:4px;" onclick="ok('h-ok')">
+            Send Enquiry <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i>
+          </button>
+          <div class="ok-msg" id="h-ok"><i class="fa-solid fa-circle-check"></i> Got it, we'll be in touch shortly.</div>
+          <p class="f-note"><i class="fa-solid fa-lock"></i> Your details stay private. POPIA compliant.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="container">
+    <div class="proof-row">
+      <div class="proof-item"><i class="fa-solid fa-shield-halved"></i> Every candidate SAPS checked</div>
+      <div class="proof-item"><i class="fa-solid fa-id-card"></i> ID and references verified</div>
+      <div class="proof-item"><i class="fa-solid fa-rotate-left"></i> 30-day free replacement</div>
+      <div class="proof-item"><i class="fa-solid fa-comment-dots"></i> 24-hour response guaranteed</div>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="container">
+    <div class="intro-inner">
+      <div>
+        <div class="section-label">About Prime Nanny</div>
+        <h2 class="section-h">Trusted placements for <em>Gauteng families</em></h2>
+        <p>We recruit, screen, and place nannies and housekeepers across Gauteng. Every candidate goes through our full verification process before you meet them, and if it doesn't work out in the first 30 days, we'll find you a replacement at no extra cost.</p>
+        <a href="#how" class="btn btn-pink">See how it works</a>
+      </div>
+      <div class="intro-stats">
+        <div class="intro-stat">
+          <span class="num">100%</span>
+          <span class="lbl">Of candidates SAPS<br>checked before placement</span>
+        </div>
+        <div class="intro-stat">
+          <span class="num">30</span>
+          <span class="lbl">Day free replacement<br>guarantee on every placement</span>
+        </div>
+        <div class="intro-stat">
+          <span class="num">24hr</span>
+          <span class="lbl">Response on every<br>client enquiry</span>
+        </div>
+        <div class="intro-stat">
+          <span class="num">R0</span>
+          <span class="lbl">Registration fee<br>for workers, always free</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="container">
+    <div class="tc">
+      <div class="section-label">The Process</div>
+      <h2 class="section-h">How a placement works</h2>
+      <p class="section-p">From your first message to your new nanny starting work, here's what to expect at each stage.</p>
+    </div>
+    <ul class="steps-list">
+      <li class="step-row">
+        <div class="step-n">1</div>
+        <div class="step-content">
+          <h4>You tell us what you need</h4>
+          <p>We start with a quick intake call or WhatsApp chat to understand your household, the role, hours, your children's ages, live-in or live-out, any special requirements. The more we know, the better the match.</p>
+        </div>
+      </li>
+      <li class="step-row">
+        <div class="step-n">2</div>
+        <div class="step-content">
+          <h4>We search and shortlist</h4>
+          <p>We match from our existing pool of verified candidates or actively recruit if needed. We only consider people who fit your specific situation, not just anyone available.</p>
+        </div>
+      </li>
+      <li class="step-row">
+        <div class="step-n">3</div>
+        <div class="step-content">
+          <h4>Every candidate is properly checked</h4>
+          <p>Before we present anyone to you, they've been through a SAPS criminal check, ID or passport verification, reference calls with previous employers, and a skills interview with us. No shortcuts.</p>
+        </div>
+      </li>
+      <li class="step-row">
+        <div class="step-n">4</div>
+        <div class="step-content">
+          <h4>You choose from a shortlist of 2 to 3</h4>
+          <p>We send you a small shortlist of candidates who match your brief. You decide who to meet. You decide who to hire. We don't push anyone on you.</p>
+        </div>
+      </li>
+      <li class="step-row">
+        <div class="step-n">5</div>
+        <div class="step-content">
+          <h4>Salary is agreed directly between you and the worker</h4>
+          <p>We don't set salaries and we don't add a margin on top. You and the worker agree what works for both of you. Our only charge is the once-off placement fee.</p>
+        </div>
+      </li>
+      <li class="step-row">
+        <div class="step-n">6</div>
+        <div class="step-content">
+          <h4>Placement confirmed, you're covered</h4>
+          <p>Once the placement is confirmed, you pay the once-off fee and your new nanny or housekeeper starts. If anything goes wrong in the first 30 days, we find a replacement for free.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-label">Placements</div>
+    <h2 class="section-h">Who we can find for you</h2>
+    <p class="section-p" style="margin-bottom:36px;">We specialise in nannies and housekeepers, but also place au pairs, home care workers, and short-term cover. Fees are once-off, there's nothing ongoing.</p>
+    <div class="svc-grid">
+      <div class="svc-cell">
+        <h3>Nannies &amp; Au Pairs</h3>
+        <p>Full-time or part-time child care. Infants, toddlers, and school-age children. Live-in or live-out, we match around your schedule and your kids.</p>
+        <span class="svc-fee">Placement fee from R2,500</span>
+      </div>
+      <div class="svc-cell">
+        <h3>Housekeepers</h3>
+        <p>Cleaning, cooking, laundry, and day-to-day household management. We find people who are reliable, thorough, and fit your home's routine.</p>
+        <span class="svc-fee">Placement fee from R2,500</span>
+      </div>
+      <div class="svc-cell">
+        <h3>Home Care Workers</h3>
+        <p>For elderly family members or post-operative recovery at home. Compassionate, patient, and properly referenced.</p>
+        <span class="svc-fee">Placement fee from R2,500</span>
+      </div>
+      <div class="svc-cell">
+        <h3>Holiday &amp; Short-term Cover</h3>
+        <p>Need someone for a week or two while your regular helper is away? We have pre-screened workers available for short-term placements.</p>
+        <span class="svc-fee">Flat fee from R800</span>
+      </div>
+      <div class="svc-cell svc-wide">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+          <div>
+            <h3 style="margin-bottom:6px;">Premium placements &amp; B2B</h3>
+            <p style="margin-bottom:0;max-width:560px;">Au pairs, household managers, and driver-nannies. Also available for guesthouses, retirement villages, and corporate relocation clients.</p>
+          </div>
+          <div>
+            <a href="#contact" class="btn btn-pink">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="why-inner">
+      <div>
+        <div class="section-label">Why Prime Nanny</div>
+        <h2 class="section-h">We're not a WhatsApp group.<br>We're not a Facebook page.</h2>
+        <p class="section-p" style="margin-bottom:0;">There are a lot of informal ways to find domestic help in Gauteng. Most of them put all the risk on you. We're different because we take that risk seriously.</p>
+        <div class="why-points">
+          <div class="why-point">
+            <span class="why-num">01</span>
+            <div>
+              <h4>Background checks aren't optional</h4>
+              <p>Every single candidate, without exception, goes through a SAPS criminal check and ID verification before we put them in front of you. We don't skip steps when someone seems nice.</p>
+            </div>
+          </div>
+          <div class="why-point">
+            <span class="why-num">02</span>
+            <div>
+              <h4>We actually call the references</h4>
+              <p>Anyone can write "references available." We call them. We ask specific questions about reliability, conduct, and what the previous employer would or wouldn't do differently.</p>
+            </div>
+          </div>
+          <div class="why-point">
+            <span class="why-num">03</span>
+            <div>
+              <h4>The match is specific to your home</h4>
+              <p>We don't send you anyone who's available. We shortlist based on your hours, your children's ages, live-in or live-out, preferred language, and whether you have pets. Small details matter.</p>
+            </div>
+          </div>
+          <div class="why-point">
+            <span class="why-num">04</span>
+            <div>
+              <h4>If it doesn't work, we fix it</h4>
+              <p>The 30-day replacement guarantee isn't small print. If a placement doesn't work out in the first month for any reason, we find you someone else, no extra fee, no argument.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="verify-block">
+          <h3>Our verification checklist</h3>
+          <p class="vb-sub">Every candidate must pass all six before we present them.</p>
+          <ul class="v-list">
+            <li class="v-item"><div class="v-dot">1</div> SA ID or passport verified</li>
+            <li class="v-item"><div class="v-dot">2</div> SAPS criminal background check</li>
+            <li class="v-item"><div class="v-dot">3</div> Minimum two reference calls</li>
+            <li class="v-item"><div class="v-dot">4</div> In-person or WhatsApp skills interview</li>
+            <li class="v-item"><div class="v-dot">5</div> POPIA consent form signed</li>
+            <li class="v-item"><div class="v-dot">6</div> Added to active placement pool</li>
+          </ul>
+          <div class="v-note">
+            No candidate is presented to a client until all six are complete. That's not a policy, it's just how we work.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<div class="guarantee">
+  <div class="container">
+    <div class="guarantee-inner">
+      <div class="gua-text">
+        <div class="gua-label">Our Commitment</div>
+        <h2>30-day free replacement guarantee</h2>
+        <p>If a placement doesn't work out within the first 30 days, for any reason, we find you a replacement at no extra charge. We keep a reserve pool of pre-screened candidates ready for exactly this.</p>
+      </div>
+      <a href="#contact" class="btn btn-ghost-white btn-lg">Get started today</a>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS REMOVED -->
+<!--
+<section class="testiSection">
+  <div class="container">
+    <div class="section-label">What families say</div>
+    <h2 class="section-h">Real feedback from Gauteng households</h2>
+    <div class="testi-layout">
+      <div class="testi-featured">
+        <div>
+          <div class="stars">★★★★★</div>
+          <blockquote>"We'd tried two people from Facebook groups before coming to Prime Nanny. Both times it didn't work out and we had no recourse. This time was completely different, the nanny they placed was exactly what we needed and the process gave us actual peace of mind."</blockquote>
+        </div>
+        <div class="testi-author">
+          <div class="av">SN</div>
+          <div>
+            <strong>Sarah N.</strong>
+            <span>Sandton, Johannesburg</span>
+          </div>
+        </div>
+      </div>
+      <div class="testi-stack">
+        <div class="testi-small">
+          <div class="stars">★★★★★</div>
+          <p>"As an elderly couple we were quite nervous. They took time to understand exactly what we needed, not just someone who was available, but the right person. Our home care worker has been with us four months now."</p>
+          <div class="testi-author">
+            <div class="av">MV</div>
+            <div>
+              <strong>Mr &amp; Mrs van Wyk</strong>
+              <span>Waterkloof, Pretoria</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-small">
+          <div class="stars">★★★★★</div>
+          <p>"Our housekeeper took maternity leave and we needed someone within days. Prime Nanny placed a reliable, experienced person in 3 days. Exactly what they said would happen, happened. No drama."</p>
+          <div class="testi-author">
+            <div class="av">KM</div>
+            <div>
+              <strong>Kagiso M.</strong>
+              <span>Fourways, Johannesburg</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- AREAS -->
+<section class="areas">
+  <div class="container">
+    <div class="section-label">Where we operate</div>
+    <h2 class="section-h">Placing across Gauteng</h2>
+    <p class="section-p" style="margin-bottom:0;">Currently active in Johannesburg, Pretoria, East Rand, and West Rand.</p>
+    <div class="areas-wrap">
+      <span class="area-tag"><i class="fa-solid fa-location-dot"></i> Sandton</span>
+      <span class="area-tag"><i class="fa-solid fa-location-dot"></i> Fourways</span>
+      <span class="area-tag"><i class="fa-solid fa-location-dot"></i> Midrand</span>
+      <span class="area-tag"><i class="fa-solid fa-location-dot"></i> Roodepoort</span>
+      <span class="area-tag"><i class="fa-solid fa-location-dot"></i> Centurion</span>
+      <span class="area-tag"><i class="fa-solid fa-location-dot"></i> Waterkloof</span>
+      <span class="area-tag"><i class="fa-solid fa-location-dot"></i> Menlyn</span>
+      <span class="area-tag"><i class="fa-solid fa-location-dot"></i> Edenvale</span>
+      <span class="area-tag"><i class="fa-solid fa-location-dot"></i> Bedfordview</span>
+      <span class="area-tag"><i class="fa-solid fa-location-dot"></i> Boksburg</span>
+      <span class="area-tag"><i class="fa-solid fa-location-dot"></i> Ruimsig</span>
+      <span class="area-tag"><i class="fa-solid fa-location-dot"></i> Honeydew</span>
+      <span class="area-tag"><i class="fa-solid fa-location-dot"></i> Constantia Kloof</span>
+    </div>
+  </div>
+</section>
+
+<!-- FORMS -->
+<section class="forms-section" id="contact">
+  <div class="container">
+    <div class="section-label">Get started</div>
+    <h2 class="section-h">Find a nanny or register as a worker</h2>
+    <p class="section-p" style="margin-bottom:0;">Fill in your details below. We respond within 24 hours on weekdays.</p>
+    <div class="forms-grid">
+
+      <!-- CLIENT FORM -->
+      <div class="form-box">
+        <div class="form-box-head">
+          <div class="form-box-label pink">For families &amp; households</div>
+          <h3>Find a Nanny or Housekeeper</h3>
+          <p class="form-box-desc">Tell us about your household and what you need. We'll come back to you with a shortlist of checked, referenced candidates.</p>
+        </div>
+        <div class="f-row">
+          <div class="f-group">
+            <label>Full Name *</label>
+            <input type="text" placeholder="Your name" />
+          </div>
+          <div class="f-group">
+            <label>WhatsApp Number *</label>
+            <input type="tel" placeholder="082 000 0000" />
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="f-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="you@email.com" />
+          </div>
+          <div class="f-group">
+            <label>Your Area *</label>
+            <input type="text" placeholder="e.g. Fourways" />
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="f-group">
+            <label>Role Needed *</label>
+            <select>
+              <option value="">Select…</option>
+              <option>Full-time Nanny</option>
+              <option>Au Pair</option>
+              <option>Housekeeper</option>
+              <option>Nanny-Housekeeper (combined)</option>
+              <option>Home Care Worker</option>
+              <option>Holiday / Short-term Cover</option>
+              <option>Household Manager</option>
+              <option>Driver-Nanny</option>
+            </select>
+          </div>
+          <div class="f-group">
+            <label>Live-in or Live-out?</label>
+            <select>
+              <option value="">Select…</option>
+              <option>Live-in</option>
+              <option>Live-out</option>
+              <option>Either</option>
+            </select>
+          </div>
+        </div>
+        <div class="f-group" style="margin-bottom:10px;">
+          <label>About your household</label>
+          <textarea placeholder="e.g. two children aged 3 and 6, need Mon–Fri 7am–5pm, English-speaking, we have a dog…"></textarea>
+        </div>
+        <p class="f-note"><i class="fa-solid fa-lock"></i> Private and POPIA compliant. We don't share your details.</p>
+        <button class="btn btn-pink" style="width:100%;justify-content:center;padding:13px;" onclick="ok('c-ok')">
+          Submit Enquiry <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i>
+        </button>
+        <div class="ok-msg" id="c-ok"><i class="fa-solid fa-circle-check"></i> Received, we'll WhatsApp you within 24 hours.</div>
+      </div>
+
+      <!-- WORKER FORM -->
+      <div class="form-box alt">
+        <div class="form-box-head">
+          <div class="form-box-label soft">For nannies &amp; housekeepers</div>
+          <h3>Register as a Worker</h3>
+          <p class="form-box-desc">Registration is free, we never charge workers a placement fee. Fill in your details and we'll be in touch about next steps.</p>
+        </div>
+        <div class="f-row">
+          <div class="f-group">
+            <label>Full Name *</label>
+            <input type="text" placeholder="Your full name" />
+          </div>
+          <div class="f-group">
+            <label>WhatsApp Number *</label>
+            <input type="tel" placeholder="082 000 0000" />
+          </div>
+        </div>
+        <!-- ID TYPE + NUMBER -->
+        <div class="f-row" style="margin-bottom:10px;">
+          <div class="f-group">
+            <label>ID Type *</label>
+            <select onchange="toggleId(this)">
+              <option value="sa">SA ID Number</option>
+              <option value="passport">Passport</option>
+            </select>
+          </div>
+          <div class="f-group" id="id-field">
+            <label>SA ID Number *</label>
+            <input type="text" placeholder="13-digit SA ID number" maxlength="13" />
+          </div>
+          <div class="f-group" id="pp-field" style="display:none;">
+            <label>Passport Number *</label>
+            <input type="text" placeholder="Passport number" />
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="f-group">
+            <label>Type of Work *</label>
+            <select>
+              <option value="">Select…</option>
+              <option>Nanny / Child Care</option>
+              <option>Au Pair</option>
+              <option>Housekeeper</option>
+              <option>Nanny-Housekeeper (combined)</option>
+              <option>Home Care Worker</option>
+              <option>Household Manager</option>
+              <option>Driver-Nanny</option>
+              <option>Short-term / Holiday Cover</option>
+            </select>
+          </div>
+          <div class="f-group">
+            <label>Live-in or Live-out?</label>
+            <select>
+              <option value="">Select…</option>
+              <option>Live-in only</option>
+              <option>Live-out only</option>
+              <option>Either</option>
+            </select>
+          </div>
+        </div>
+        <div class="f-group" style="margin-bottom:10px;">
+          <label>Experience &amp; Skills</label>
+          <textarea placeholder="e.g. 5 years as a nanny with infants, first aid trained, driver's licence, can cook…"></textarea>
+        </div>
+        <p class="f-note"><i class="fa-solid fa-shield-halved"></i> By submitting you consent to Prime Nanny storing your details for placement purposes (POPIA). Registration is always free.</p>
+        <button class="btn btn-pink" style="width:100%;justify-content:center;padding:13px;" onclick="ok('w-ok')">
+          Register My Interest <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i>
+        </button>
+        <div class="ok-msg" id="w-ok"><i class="fa-solid fa-circle-check"></i> Registered, we'll be in touch about next steps.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <div class="faq-inner">
+      <div class="faq-lead">
+        <div class="section-label">FAQ</div>
+        <h2>Common questions</h2>
+        <p>Can't find what you're looking for? Get in touch directly.</p>
+        <p class="faq-contact">
+          <a href="https://wa.me/27660023164"><i class="fa-brands fa-whatsapp"></i> WhatsApp us</a> or email <a href="mailto:primenanny@gmail.com">primenanny@gmail.com</a>
+        </p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item open">
+          <div class="faq-q" onclick="faq(this)">
+            How much does it cost?
+            <div class="faq-toggle"><i class="fa-solid fa-plus"></i></div>
+          </div>
+          <div class="faq-a">You pay a once-off placement fee when the placement is confirmed, typically R2,500 to R6,000 for standard roles, up to R15,000 for premium placements. There are no monthly fees and no ongoing charges. The worker's salary is agreed directly between you and them.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="faq(this)">
+            Am I the employer or is Prime Nanny?
+            <div class="faq-toggle"><i class="fa-solid fa-plus"></i></div>
+          </div>
+          <div class="faq-a">You are the employer. Prime Nanny is a placement agency, we find and verify the worker, but the employment relationship is entirely between you and the worker. We put this in writing for both parties so there's no confusion.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="faq(this)">
+            How long does a placement take?
+            <div class="faq-toggle"><i class="fa-solid fa-plus"></i></div>
+          </div>
+          <div class="faq-a">Most placements are completed within one to two weeks of the initial intake call. Urgent or short-term placements can often be done faster. Premium placements, household managers and specialised carers, may take a little longer.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="faq(this)">
+            What exactly does the 30-day guarantee cover?
+            <div class="faq-toggle"><i class="fa-solid fa-plus"></i></div>
+          </div>
+          <div class="faq-a">If a placement doesn't work out within the first 30 days for any reason, we find you a replacement candidate at no additional charge. We keep a reserve pool of pre-screened candidates available for this reason.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="faq(this)">
+            Is there a fee for workers to register?
+            <div class="faq-toggle"><i class="fa-solid fa-plus"></i></div>
+          </div>
+          <div class="faq-a">No, registration is always free for candidates. We will never charge a worker to be placed. Our fee is paid by the household, not the worker. If anyone tells you Prime Nanny charges workers, that's not us.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="faq(this)">
+            How is my personal information handled?
+            <div class="faq-toggle"><i class="fa-solid fa-plus"></i></div>
+          </div>
+          <div class="faq-a">Prime Nanny is POPIA compliant. We collect only what's needed for the placement process, store it securely, and never share it with third parties without your consent. Candidates sign a consent form before any background check is run.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-kicker">Ready when you are</div>
+    <h2>Stop guessing.<br><em>Start trusting.</em></h2>
+    <p>We'll handle the search, the checks, and the shortlist. You just choose who feels right for your home.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-pink btn-lg">Find a Nanny or Housekeeper</a>
+      <a href="https://wa.me/27660023164" class="btn btn-ghost-white btn-lg"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="ft-brand">
+        <div class="ft-logo">Prime <span>Nanny</span></div>
+        <p>Gauteng's nanny and housekeeper placement agency. Recruiting, verifying, and placing reliable home staff across Johannesburg, Pretoria, and surrounds.</p>
+        <div class="ft-socials">
+          <a href="#" class="ft-soc"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="ft-soc"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="ft-soc"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="ft-col">
+        <h5>Navigate</h5>
+        <ul class="ft-links">
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why">Why Prime Nanny</a></li>
+          <li><a href="#contact">Find a Nanny</a></li>
+          <li><a href="#contact">Register as a Worker</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h5>Services</h5>
+        <ul class="ft-links">
+          <li><a href="#">Nannies &amp; Au Pairs</a></li>
+          <li><a href="#">Housekeepers</a></li>
+          <li><a href="#">Home Care Workers</a></li>
+          <li><a href="#">Holiday Cover</a></li>
+          <li><a href="#">Premium Placements</a></li>
+          <li><a href="#">Business &amp; B2B</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h5>Contact</h5>
+        <div class="ft-contact-row"><i class="fa-brands fa-whatsapp"></i><span>066 002 3164</span></div>
+        <div class="ft-contact-row"><i class="fa-regular fa-envelope"></i><span>primenanny@gmail.com</span></div>
+        <div class="ft-contact-row"><i class="fa-solid fa-map-pin"></i><span>Gauteng. JHB, PTA, East &amp; West Rand</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Prime Nanny (Pty) Ltd</span>
+      <span class="popia-pill"><i class="fa-solid fa-lock"></i> POPIA Compliant</span>
+      <span>Placement agency only, not the employer of placed workers</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/27660023164" class="wa-btn"><i class="fa-brands fa-whatsapp"></i></a>
+
+<!-- Scroll top -->
+<div class="scroll-top" id="st" onclick="scrollTo({top:0,behavior:'smooth'})"><i class="fa-solid fa-chevron-up"></i></div>
+
+<script>
+  function ok(id) { document.getElementById(id).classList.add('show'); }
+
+  function toggleId(sel) {
+    const pp = sel.value === 'passport';
+    document.getElementById('id-field').style.display = pp ? 'none' : 'block';
+    document.getElementById('pp-field').style.display = pp ? 'block' : 'none';
+  }
+
+  function faq(el) {
+    const item = el.closest('.faq-item');
+    const was = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!was) item.classList.add('open');
+  }
+
+  window.addEventListener('scroll', () => {
+    document.getElementById('st').classList.toggle('show', scrollY > 500);
+  });
+</script>
+</body>
+</html>
